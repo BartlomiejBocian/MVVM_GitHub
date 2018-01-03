@@ -7,19 +7,49 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let disposeBag = DisposeBag()
+    
+    var viewModel: ViewModel!
+    
+    private let cellIdentifier = "Cell"
+    
+    var latestSearch: Observable<String> {
+        return searchBar
+            .rx.text
+            .orEmpty
+            .filter { !$0.isEmpty }
+            .debounce(0.5, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupRx()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupRx() {
+        
+        viewModel = ViewModel(searchQuery: latestSearch)
+        
+        viewModel.trackResults().bind(to: tableView.rx.items(dataSource: dataSource)).addDisposableTo(self.disposeBag)
+        
+        tableView
+            .rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                if self.searchBar.isFirstResponder == true {
+                    self.view.endEditing(true)
+                }
+            })
+            .addDisposableTo(self.disposeBag)
     }
-
-
+    
 }
 

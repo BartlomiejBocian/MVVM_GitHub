@@ -31,4 +31,9 @@ extension APIEndpoints {
             return URL(string: basePath + "users?q=" + query + baseParams)!
         }
     }
+    
+    var request: URLRequest {
+        return URLRequest(url: self.path)
+    }
+    
 }
