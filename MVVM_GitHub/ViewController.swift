@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         return searchBar
             .rx.text
             .orEmpty
-            .filter { !$0.isEmpty }
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
     }
@@ -39,7 +38,12 @@ class ViewController: UIViewController {
         
         viewModel = ViewModel(searchQuery: latestSearch)
         
-        viewModel.trackResults().bind(to: tableView.rx.items(dataSource: dataSource)).addDisposableTo(self.disposeBag)
+        viewModel.trackResults().bind(to: tableView.rx.items) { tableView, row, item in
+            let cell: GitHubTableViewCell = tableView.dequeueReusableCell(withIdentifier: "repoCell", for: IndexPath(row: row, section: 0)) as! GitHubTableViewCell
+            cell.repoName?.text = item.name
+            return cell
+            }
+            .addDisposableTo(disposeBag)
         
         tableView
             .rx.itemSelected

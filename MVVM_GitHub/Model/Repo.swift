@@ -16,6 +16,9 @@ struct ResponseResults: Mappable{
     init?(map: Map) {
         
     }
+    init() {
+        
+    }
     
     mutating func mapping(map: Map) {
         repos     <- map["items"]

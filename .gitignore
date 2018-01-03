@@ -25,3 +25,5 @@ DerivedData/
 # CocoaPods
 
  Pods/
+Pods
+contents.xcworkspacedata

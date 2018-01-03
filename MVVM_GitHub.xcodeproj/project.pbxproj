@@ -10,6 +10,7 @@
 		072E920CB4388D2CC627D0A6 /* Pods_MVVM_GitHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05733571141BB9F6391E5ED2 /* Pods_MVVM_GitHubTests.framework */; };
 		344948E3D9709700CDC256BF /* Pods_MVVM_GitHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F989CFEC1AD1241E90E4403B /* Pods_MVVM_GitHubUITests.framework */; };
 		535A05BA046AFFD0CE00438E /* Pods_MVVM_GitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC11B268E4A49F8637DF5C8 /* Pods_MVVM_GitHub.framework */; };
+		5D10CA071FFD73B700A7E92E /* GitHubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D10CA061FFD73B700A7E92E /* GitHubTableViewCell.swift */; };
 		5D23D6B21FFBE71F004D8296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */; };
 		5D23D6B41FFBE71F004D8296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6B31FFBE71F004D8296 /* ViewController.swift */; };
 		5D23D6B71FFBE71F004D8296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D23D6B51FFBE71F004D8296 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		05733571141BB9F6391E5ED2 /* Pods_MVVM_GitHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_GitHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E73DDAAA0EA26C809F67654 /* Pods-MVVM_GitHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHubUITests/Pods-MVVM_GitHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5250322014F02DE969E6EE9A /* Pods-MVVM_GitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHub/Pods-MVVM_GitHub.debug.xcconfig"; sourceTree = "<group>"; };
+		5D10CA061FFD73B700A7E92E /* GitHubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTableViewCell.swift; sourceTree = "<group>"; };
 		5D23D6AE1FFBE71F004D8296 /* MVVM_GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D23D6B31FFBE71F004D8296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D10CA081FFD73BE00A7E92E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D10CA061FFD73B700A7E92E /* GitHubTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5D23D6A51FFBE71F004D8296 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 			children = (
 				5D3271581FFC1DDC00D85242 /* API */,
 				5D3271511FFBEE9F00D85242 /* Model */,
+				5D10CA081FFD73BE00A7E92E /* View */,
 				5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */,
 				5D3271541FFBFC8400D85242 /* ViewModel.swift */,
 				5D23D6B31FFBE71F004D8296 /* ViewController.swift */,
@@ -493,6 +504,7 @@
 			files = (
 				5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */,
 				5D3271531FFBEEC200D85242 /* Repo.swift in Sources */,
+				5D10CA071FFD73B700A7E92E /* GitHubTableViewCell.swift in Sources */,
 				5D23D6B41FFBE71F004D8296 /* ViewController.swift in Sources */,
 				5D3271551FFBFC8400D85242 /* ViewModel.swift in Sources */,
 				5D23D6B21FFBE71F004D8296 /* AppDelegate.swift in Sources */,
