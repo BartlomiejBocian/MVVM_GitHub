@@ -11,6 +11,7 @@ import UIKit
 class GitHubTableViewCell: UITableViewCell {
 
     @IBOutlet weak var repoName: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

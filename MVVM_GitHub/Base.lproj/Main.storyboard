@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,16 +32,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6h-OP-nw2">
-                                                    <rect key="frame" x="15" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E4z-3Q-3ef">
+                                                    <rect key="frame" x="16" y="16" width="58.5" height="37.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6h-OP-nw2">
+                                                    <rect key="frame" x="82.5" y="0.0" width="292.5" height="69.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u6h-OP-nw2" firstAttribute="leading" secondItem="E4z-3Q-3ef" secondAttribute="trailing" constant="8" id="1S2-ST-h1g"/>
+                                                <constraint firstItem="E4z-3Q-3ef" firstAttribute="leading" secondItem="4r5-3U-wh7" secondAttribute="leading" constant="16" id="JUB-4p-Kpq"/>
+                                                <constraint firstItem="u6h-OP-nw2" firstAttribute="top" secondItem="4r5-3U-wh7" secondAttribute="top" id="KpR-Cx-0VI"/>
+                                                <constraint firstItem="E4z-3Q-3ef" firstAttribute="width" secondItem="u6h-OP-nw2" secondAttribute="width" multiplier="0.2" id="OyR-1H-tYi"/>
+                                                <constraint firstItem="E4z-3Q-3ef" firstAttribute="top" secondItem="4r5-3U-wh7" secondAttribute="top" constant="16" id="PXj-dG-unJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="E4z-3Q-3ef" secondAttribute="bottom" constant="16" id="Wh1-KD-cXD"/>
+                                                <constraint firstAttribute="bottom" secondItem="u6h-OP-nw2" secondAttribute="bottom" id="dWm-49-0fF"/>
+                                                <constraint firstAttribute="trailing" secondItem="u6h-OP-nw2" secondAttribute="trailing" id="ebD-XE-MnH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="iconImageView" destination="E4z-3Q-3ef" id="i4i-e8-ee3"/>
                                             <outlet property="repoName" destination="u6h-OP-nw2" id="fmu-aS-c4O"/>
                                         </connections>
                                     </tableViewCell>

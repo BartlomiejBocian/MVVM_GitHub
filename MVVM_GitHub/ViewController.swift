@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import SwiftIcons
 
 class ViewController: UIViewController {
     
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
         viewModel.trackResults().bind(to: tableView.rx.items) { tableView, row, item in
             let cell: GitHubTableViewCell = tableView.dequeueReusableCell(withIdentifier: "repoCell", for: IndexPath(row: row, section: 0)) as! GitHubTableViewCell
             cell.repoName?.text = item.name
+            cell.iconImageView.setIcon(icon: .fontAwesome(.github))
             return cell
             }
             .addDisposableTo(disposeBag)
