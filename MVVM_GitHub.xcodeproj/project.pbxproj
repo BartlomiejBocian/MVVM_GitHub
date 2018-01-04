@@ -12,14 +12,15 @@
 		535A05BA046AFFD0CE00438E /* Pods_MVVM_GitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC11B268E4A49F8637DF5C8 /* Pods_MVVM_GitHub.framework */; };
 		5D10CA071FFD73B700A7E92E /* GitHubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D10CA061FFD73B700A7E92E /* GitHubTableViewCell.swift */; };
 		5D23D6B21FFBE71F004D8296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */; };
-		5D23D6B41FFBE71F004D8296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6B31FFBE71F004D8296 /* ViewController.swift */; };
+		5D23D6B41FFBE71F004D8296 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6B31FFBE71F004D8296 /* MasterViewController.swift */; };
 		5D23D6B71FFBE71F004D8296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D23D6B51FFBE71F004D8296 /* Main.storyboard */; };
 		5D23D6B91FFBE71F004D8296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D23D6B81FFBE71F004D8296 /* Assets.xcassets */; };
 		5D23D6BC1FFBE71F004D8296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D23D6BA1FFBE71F004D8296 /* LaunchScreen.storyboard */; };
 		5D23D6C71FFBE720004D8296 /* MVVM_GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6C61FFBE720004D8296 /* MVVM_GitHubTests.swift */; };
 		5D23D6D21FFBE720004D8296 /* MVVM_GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6D11FFBE720004D8296 /* MVVM_GitHubUITests.swift */; };
-		5D3271531FFBEEC200D85242 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271521FFBEEC200D85242 /* Repo.swift */; };
-		5D3271551FFBFC8400D85242 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271541FFBFC8400D85242 /* ViewModel.swift */; };
+		5D2602711FFEB95D0069D1D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2602701FFEB95D0069D1D5 /* DetailViewController.swift */; };
+		5D3271531FFBEEC200D85242 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271521FFBEEC200D85242 /* SearchModel.swift */; };
+		5D3271551FFBFC8400D85242 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271541FFBFC8400D85242 /* MasterViewModel.swift */; };
 		5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271561FFC19B900D85242 /* APIEndpoints.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +48,7 @@
 		5D10CA061FFD73B700A7E92E /* GitHubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTableViewCell.swift; sourceTree = "<group>"; };
 		5D23D6AE1FFBE71F004D8296 /* MVVM_GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D23D6B31FFBE71F004D8296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D23D6B31FFBE71F004D8296 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		5D23D6B61FFBE71F004D8296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D23D6B81FFBE71F004D8296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D23D6BB1FFBE71F004D8296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +59,9 @@
 		5D23D6CD1FFBE720004D8296 /* MVVM_GitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVM_GitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D23D6D11FFBE720004D8296 /* MVVM_GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_GitHubUITests.swift; sourceTree = "<group>"; };
 		5D23D6D31FFBE720004D8296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D3271521FFBEEC200D85242 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
-		5D3271541FFBFC8400D85242 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5D2602701FFEB95D0069D1D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5D3271521FFBEEC200D85242 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		5D3271541FFBFC8400D85242 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		5D3271561FFC19B900D85242 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		6AA2CF306840105893605F75 /* Pods-MVVM_GitHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHubTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHubTests/Pods-MVVM_GitHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70BCE722C93C18952F716B14 /* Pods-MVVM_GitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHub/Pods-MVVM_GitHub.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,8 +159,9 @@
 				5D3271511FFBEE9F00D85242 /* Model */,
 				5D10CA081FFD73BE00A7E92E /* View */,
 				5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */,
-				5D3271541FFBFC8400D85242 /* ViewModel.swift */,
-				5D23D6B31FFBE71F004D8296 /* ViewController.swift */,
+				5D3271541FFBFC8400D85242 /* MasterViewModel.swift */,
+				5D23D6B31FFBE71F004D8296 /* MasterViewController.swift */,
+				5D2602701FFEB95D0069D1D5 /* DetailViewController.swift */,
 				5D23D6B51FFBE71F004D8296 /* Main.storyboard */,
 				5D23D6B81FFBE71F004D8296 /* Assets.xcassets */,
 				5D23D6BA1FFBE71F004D8296 /* LaunchScreen.storyboard */,
@@ -188,7 +191,7 @@
 		5D3271511FFBEE9F00D85242 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D3271521FFBEEC200D85242 /* Repo.swift */,
+				5D3271521FFBEEC200D85242 /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxObjectMapper/RxObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -406,6 +410,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,11 +510,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */,
-				5D3271531FFBEEC200D85242 /* Repo.swift in Sources */,
+				5D3271531FFBEEC200D85242 /* SearchModel.swift in Sources */,
 				5D10CA071FFD73B700A7E92E /* GitHubTableViewCell.swift in Sources */,
-				5D23D6B41FFBE71F004D8296 /* ViewController.swift in Sources */,
-				5D3271551FFBFC8400D85242 /* ViewModel.swift in Sources */,
+				5D23D6B41FFBE71F004D8296 /* MasterViewController.swift in Sources */,
+				5D3271551FFBFC8400D85242 /* MasterViewModel.swift in Sources */,
 				5D23D6B21FFBE71F004D8296 /* AppDelegate.swift in Sources */,
+				5D2602711FFEB95D0069D1D5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

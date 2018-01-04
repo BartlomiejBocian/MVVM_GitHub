@@ -9,9 +9,10 @@
 import Foundation
 import ObjectMapper
 
-struct ResponseResults: Mappable{
+struct SearchResponseResults: Mappable{
 
-    var repos: [Repo]?
+    var repos: [SimpleRepo]?
+    var users: [SimpleUser]?
     
     init?(map: Map) {
         
@@ -26,12 +27,11 @@ struct ResponseResults: Mappable{
 }
 
 
-struct Repo: Mappable{
+struct SimpleRepo: Mappable{
     
     var id: Int?
     var name: String?
     var ownerName: String?
-    var stars: Int?
     
     init?(map: Map) {
     
@@ -41,6 +41,20 @@ struct Repo: Mappable{
         id        <- map["id"]
         name      <- map["name"]
         ownerName <- map["owner.login"]
-        stars     <- map["stargazers_count"]
+    }
+}
+
+struct SimpleUser: Mappable{
+    
+    var id: Int?
+    var userName: String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        id        <- map["id"]
+        userName  <- map["login"]
     }
 }

@@ -10,6 +10,7 @@ target 'MVVM_GitHub' do
   pod 'ObjectMapper', '~> 2.2'
   pod 'RxObjectMapper'
   pod 'SwiftIcons'
+  pod 'SDWebImage'
 
   target 'MVVM_GitHubTests' do
     inherit! :search_paths
