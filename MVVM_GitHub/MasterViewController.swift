@@ -89,10 +89,23 @@ class MasterViewController: UIViewController, UITableViewDelegate {
                 if self.searchBar.isFirstResponder == true {
                     self.view.endEditing(true)
                 }
-                guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailRepoViewController") as? DetailRepoViewController
-                    else { fatalError("DetailViewController not found") }
-                detailVC.detailItemQuery = value.name
-                self.navigationController?.pushViewController(detailVC, animated: true)
+                switch value.type {
+                case .repoCell?:
+                    guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailRepoViewController") as? DetailRepoViewController
+                        else { fatalError("DetailViewController not found") }
+                    detailVC.detailItemQuery = value.name
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                    break
+                case .userCell?:
+                    guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailUserViewController") as? DetailUserViewController
+                        else { fatalError("DetailViewController not found") }
+                    detailVC.detailItemQuery = value.name
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                    break
+                case .none:
+                    break
+                }
+                
             }, onError:{error in
                 print(error)
             })

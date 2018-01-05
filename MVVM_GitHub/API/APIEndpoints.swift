@@ -11,12 +11,14 @@ import Foundation
 enum APIEndpoints {
     case repositories(query: String)
     case users(query: String)
+    case repository(query: String)
+    case user(query: String)
 }
 
 extension APIEndpoints {
     
     var basePath: String {
-        return "https://api.github.com/search/"
+        return "https://api.github.com/"
     }
     
     var baseParams: String {
@@ -26,9 +28,13 @@ extension APIEndpoints {
     var path: URL {
         switch self {
         case .repositories(let query):
-            return URL(string: basePath + "repositories?q=" + query + baseParams)!
+            return URL(string: basePath + "search/" + "repositories?q=" + query + baseParams)!
         case .users(let query):
-            return URL(string: basePath + "users?q=" + query + baseParams)!
+            return URL(string: basePath + "search/" + "users?q=" + query + baseParams)!
+        case .repository(let query):
+            return URL(string: basePath + "repos/" + query)!
+        case .user(let query):
+            return URL(string: basePath + "users/" + query)!
         }
     }
     

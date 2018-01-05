@@ -14,14 +14,16 @@ struct Repository: Mappable{
     var id: Int?
     var name: String?
     var ownerName: String?
+    var stars: Int?
     
     init?(map: Map) {}
     init() {}
     
     mutating func mapping(map: Map) {
         id        <- map["id"]
-        name      <- map["full_name"]
+        name      <- map["name"]
         ownerName <- map["owner.login"]
+        stars      <- map["stargazers_count"]
     }
 }
 
@@ -29,13 +31,16 @@ struct User: Mappable{
     
     var id: Int?
     var userName: String?
+    var avatar: String?
+    var followers: Int?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
+    init() {}
     
     mutating func mapping(map: Map) {
         id        <- map["id"]
-        userName  <- map["login"]
+        userName  <- map["name"]
+        avatar    <- map["avatar_url"]
+        followers <- map["followers"]
     }
 }

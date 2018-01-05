@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftIcons
+import RxSwift
+import RxCocoa
 
 class DetailRepoViewController: UIViewController {
     
@@ -21,10 +23,8 @@ class DetailRepoViewController: UIViewController {
     
     var detailItemQuery: String?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    let viewModel = DetailViewModel()
+    var disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,9 +35,19 @@ class DetailRepoViewController: UIViewController {
         repositoryNameImageView.setIcon(icon: .fontAwesome(.github))
         repositoryOwnerImageView.setIcon(icon: .fontAwesome(.user))
         repositoryStarsImageView.setIcon(icon: .fontAwesome(.star))
-        if let model = detailItemQuery {
-//            repositoryNameLabel.text = model.name
-//            repositoryOwnerLabel.text = model.ownerName
+        
+        if let query = detailItemQuery {
+            viewModel.fetchRepository(fullName: query)
+                .subscribe(onNext: { [weak self] repo in
+                    DispatchQueue.main.async{
+                        self?.repositoryNameLabel.text = repo.name
+                        self?.repositoryOwnerLabel.text = repo.ownerName
+                        if let starCount = repo.stars {
+                            self?.repositoryStarsLabel.text = "\(starCount)"
+                        }
+                    }
+                }, onError: {error in print(error)})
+                .addDisposableTo(self.disposeBag)
         }
     }
     

@@ -22,6 +22,7 @@
 		5D3271531FFBEEC200D85242 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271521FFBEEC200D85242 /* SearchModel.swift */; };
 		5D3271551FFBFC8400D85242 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271541FFBFC8400D85242 /* MasterViewModel.swift */; };
 		5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271561FFC19B900D85242 /* APIEndpoints.swift */; };
+		5D4722D51FFF8FD200ABF33E /* DetailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4722D41FFF8FD200ABF33E /* DetailUserViewController.swift */; };
 		5D5C6A651FFF7D4600492B27 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C6A641FFF7D4600492B27 /* CellModel.swift */; };
 		5D5C6A671FFF820200492B27 /* DetailRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C6A661FFF820200492B27 /* DetailRepoViewModel.swift */; };
 		5D5C6A691FFF83AB00492B27 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C6A681FFF83AB00492B27 /* DetailModel.swift */; };
@@ -66,6 +67,7 @@
 		5D3271521FFBEEC200D85242 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		5D3271541FFBFC8400D85242 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		5D3271561FFC19B900D85242 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		5D4722D41FFF8FD200ABF33E /* DetailUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserViewController.swift; sourceTree = "<group>"; };
 		5D5C6A641FFF7D4600492B27 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		5D5C6A661FFF820200492B27 /* DetailRepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepoViewModel.swift; sourceTree = "<group>"; };
 		5D5C6A681FFF83AB00492B27 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				5D23D6B31FFBE71F004D8296 /* MasterViewController.swift */,
 				5D5C6A661FFF820200492B27 /* DetailRepoViewModel.swift */,
 				5D2602701FFEB95D0069D1D5 /* DetailRepoViewController.swift */,
+				5D4722D41FFF8FD200ABF33E /* DetailUserViewController.swift */,
 				5D23D6B51FFBE71F004D8296 /* Main.storyboard */,
 				5D23D6B81FFBE71F004D8296 /* Assets.xcassets */,
 				5D23D6BA1FFBE71F004D8296 /* LaunchScreen.storyboard */,
@@ -524,6 +527,7 @@
 			files = (
 				5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */,
 				5D3271531FFBEEC200D85242 /* SearchModel.swift in Sources */,
+				5D4722D51FFF8FD200ABF33E /* DetailUserViewController.swift in Sources */,
 				5D10CA071FFD73B700A7E92E /* GitHubTableViewCell.swift in Sources */,
 				5D5C6A651FFF7D4600492B27 /* CellModel.swift in Sources */,
 				5D5C6A671FFF820200492B27 /* DetailRepoViewModel.swift in Sources */,
