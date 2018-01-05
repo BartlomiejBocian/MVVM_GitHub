@@ -204,8 +204,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nse-xf-D0V">
-                                <rect key="frame" x="145.5" y="366" width="83.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nse-xf-D0V">
+                                <rect key="frame" x="151" y="374" width="72.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -217,13 +217,6 @@
                                     <constraint firstAttribute="height" constant="25" id="K2D-ZU-ACY"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-4N-JHT">
-                                <rect key="frame" x="112.5" y="364" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="NWN-NG-iOF"/>
-                                    <constraint firstAttribute="width" constant="25" id="bcc-bD-QAb"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AJq-Up-seu">
                                 <rect key="frame" x="87" y="158" width="200" height="200"/>
                                 <constraints>
@@ -231,6 +224,12 @@
                                     <constraint firstAttribute="height" constant="200" id="Rcl-Dv-mDn"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqp-Lx-JnQ">
+                                <rect key="frame" x="66" y="374" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -238,16 +237,15 @@
                             <constraint firstItem="LXB-Y9-3g8" firstAttribute="leading" secondItem="F05-jL-AMr" secondAttribute="trailing" constant="8" id="KIF-xp-kCx"/>
                             <constraint firstItem="AJq-Up-seu" firstAttribute="top" secondItem="LXB-Y9-3g8" secondAttribute="bottom" constant="29.5" id="Mlx-Px-7yu"/>
                             <constraint firstItem="LXB-Y9-3g8" firstAttribute="centerX" secondItem="gGY-4O-78V" secondAttribute="centerX" id="NW9-FQ-yMM"/>
-                            <constraint firstItem="nse-xf-D0V" firstAttribute="top" secondItem="AJq-Up-seu" secondAttribute="bottom" constant="8" id="NeP-H5-SgN"/>
+                            <constraint firstItem="nse-xf-D0V" firstAttribute="top" secondItem="AJq-Up-seu" secondAttribute="bottom" constant="16" id="NeP-H5-SgN"/>
                             <constraint firstItem="F05-jL-AMr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gGY-4O-78V" secondAttribute="leading" constant="8" id="Tgl-iG-VJI"/>
                             <constraint firstItem="AJq-Up-seu" firstAttribute="centerX" secondItem="LXB-Y9-3g8" secondAttribute="centerX" id="WAI-iy-gnS"/>
-                            <constraint firstItem="fUu-4N-JHT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gGY-4O-78V" secondAttribute="leading" constant="8" id="WML-r0-czW"/>
                             <constraint firstItem="nse-xf-D0V" firstAttribute="centerX" secondItem="AJq-Up-seu" secondAttribute="centerX" id="cWh-a6-mjE"/>
                             <constraint firstItem="gGY-4O-78V" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nse-xf-D0V" secondAttribute="trailing" constant="8" id="g6y-jy-m2Q"/>
-                            <constraint firstItem="fUu-4N-JHT" firstAttribute="centerY" secondItem="nse-xf-D0V" secondAttribute="centerY" id="ghr-sq-pkU"/>
                             <constraint firstItem="F05-jL-AMr" firstAttribute="centerY" secondItem="LXB-Y9-3g8" secondAttribute="centerY" id="map-pj-oWR"/>
                             <constraint firstItem="LXB-Y9-3g8" firstAttribute="top" secondItem="gGY-4O-78V" secondAttribute="top" constant="31" id="pI9-Ey-xKF"/>
-                            <constraint firstItem="nse-xf-D0V" firstAttribute="leading" secondItem="fUu-4N-JHT" secondAttribute="trailing" constant="8" id="ybN-eY-7TP"/>
+                            <constraint firstItem="yqp-Lx-JnQ" firstAttribute="centerY" secondItem="nse-xf-D0V" secondAttribute="centerY" id="qTG-5b-RH6"/>
+                            <constraint firstItem="nse-xf-D0V" firstAttribute="leading" secondItem="yqp-Lx-JnQ" secondAttribute="trailing" constant="8" id="xuP-5i-tsS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gGY-4O-78V"/>
                     </view>

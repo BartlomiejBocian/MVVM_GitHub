@@ -39,7 +39,9 @@ class DetailUserViewController: UIViewController {
                     DispatchQueue.main.async{
                         self?.userNameLabel.text = user.userName
                         if let avatar = user.avatar{
-                        self?.avatarImageView.sd_setImage(with: URL(string: avatar), placeholderImage: UIImage(named: "placeholder.png"))
+                            self?.avatarImageView.sd_setShowActivityIndicatorView(true)
+                            self?.avatarImageView.sd_setIndicatorStyle(.gray)
+                            self?.avatarImageView.sd_setImage(with: URL(string: avatar))
                         }
                         if let followersCount = user.followers {
                             self?.userFollowersLabel.text = "\(followersCount)"
