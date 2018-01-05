@@ -1,8 +1,8 @@
 //
-//  ViewModel.swift
+//  DetailViewModel.swift
 //  MVVM_GitHub
 //
-//  Created by Bartłomiej Bocian on 02.01.2018.
+//  Created by Bartłomiej Bocian on 05.01.2018.
 //  Copyright © 2018 Bartłomiej Bocian. All rights reserved.
 //
 
@@ -12,20 +12,20 @@ import RxSwift
 import RxObjectMapper
 import RxDataSources
 
-struct MasterViewModel {
+struct DetailViewModel {
     
     let searchQuery: Observable<String>
     
-    func trackResults() -> Observable<[SectionOfCustomData]> {
+    func fetchRepository() -> Observable<Repository> {
         return searchQuery
             .observeOn(MainScheduler.instance)
             .flatMapLatest{ query -> Observable<[SectionOfCustomData]> in
                 return self.fetchSearchResult(query: query)
-            }
+        }
     }
     
     internal func fetchSearchResult(query: String) -> Observable<[SectionOfCustomData]> {
-       return getRepo(query: query)
+        return getRepo(query: query)
     }
     
     internal func getRepo(query: String) -> Observable<[SectionOfCustomData]> {
@@ -40,8 +40,8 @@ struct MasterViewModel {
             }
             .replaceNilWith([])
             .catchError{ error ->  Observable<[SectionOfCustomData]> in
-                 Observable<[SectionOfCustomData]>.just([])
-            }
+                Observable<[SectionOfCustomData]>.just([])
+        }
     }
     
     internal func getUser(query: String, reposList: [SimpleRepo]) -> Observable<[SectionOfCustomData]?> {
@@ -79,7 +79,8 @@ struct MasterViewModel {
             }
             .catchError{ error ->  Observable<[SectionOfCustomData]?> in
                 Observable<[SectionOfCustomData]?>.just([])
-            }
+        }
     }
     
 }
+

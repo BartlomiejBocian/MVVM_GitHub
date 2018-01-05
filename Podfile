@@ -9,8 +9,9 @@ target 'MVVM_GitHub' do
   pod 'RxOptional'
   pod 'ObjectMapper', '~> 2.2'
   pod 'RxObjectMapper'
-  pod 'SwiftIcons'
+  pod 'SwiftIcons', '~> 1.5.1'
   pod 'SDWebImage'
+  pod 'RxDataSources', '~> 2.0.2'
 
   target 'MVVM_GitHubTests' do
     inherit! :search_paths
@@ -22,4 +23,12 @@ target 'MVVM_GitHub' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.2'
+        end
+    end
 end

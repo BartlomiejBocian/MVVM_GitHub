@@ -1,40 +1,15 @@
 //
-//  Repo.swift
+//  DetailModel.swift
 //  MVVM_GitHub
 //
-//  Created by Bartłomiej Bocian on 02.01.2018.
+//  Created by Bartłomiej Bocian on 05.01.2018.
 //  Copyright © 2018 Bartłomiej Bocian. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-struct SearchRepoResponseResults: Mappable{
-
-    var repos: [SimpleRepo]?
-    
-    init?(map: Map) {}
-    init() {}
-    
-    mutating func mapping(map: Map) {
-        repos     <- map["items"]
-    }
-}
-
-struct SearchUserResponseResults: Mappable{
-    
-    var users: [SimpleUser]?
-    
-    init?(map: Map) {}
-    init() {}
-    
-    mutating func mapping(map: Map) {
-        users     <- map["items"]
-    }
-}
-
-
-struct SimpleRepo: Mappable{
+struct Repository: Mappable{
     
     var id: Int?
     var name: String?
@@ -50,7 +25,7 @@ struct SimpleRepo: Mappable{
     }
 }
 
-struct SimpleUser: Mappable{
+struct User: Mappable{
     
     var id: Int?
     var userName: String?

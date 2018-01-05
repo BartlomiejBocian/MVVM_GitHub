@@ -18,10 +18,13 @@
 		5D23D6BC1FFBE71F004D8296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D23D6BA1FFBE71F004D8296 /* LaunchScreen.storyboard */; };
 		5D23D6C71FFBE720004D8296 /* MVVM_GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6C61FFBE720004D8296 /* MVVM_GitHubTests.swift */; };
 		5D23D6D21FFBE720004D8296 /* MVVM_GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23D6D11FFBE720004D8296 /* MVVM_GitHubUITests.swift */; };
-		5D2602711FFEB95D0069D1D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2602701FFEB95D0069D1D5 /* DetailViewController.swift */; };
+		5D2602711FFEB95D0069D1D5 /* DetailRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2602701FFEB95D0069D1D5 /* DetailRepoViewController.swift */; };
 		5D3271531FFBEEC200D85242 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271521FFBEEC200D85242 /* SearchModel.swift */; };
 		5D3271551FFBFC8400D85242 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271541FFBFC8400D85242 /* MasterViewModel.swift */; };
 		5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3271561FFC19B900D85242 /* APIEndpoints.swift */; };
+		5D5C6A651FFF7D4600492B27 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C6A641FFF7D4600492B27 /* CellModel.swift */; };
+		5D5C6A671FFF820200492B27 /* DetailRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C6A661FFF820200492B27 /* DetailRepoViewModel.swift */; };
+		5D5C6A691FFF83AB00492B27 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C6A681FFF83AB00492B27 /* DetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +62,13 @@
 		5D23D6CD1FFBE720004D8296 /* MVVM_GitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVM_GitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D23D6D11FFBE720004D8296 /* MVVM_GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_GitHubUITests.swift; sourceTree = "<group>"; };
 		5D23D6D31FFBE720004D8296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D2602701FFEB95D0069D1D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5D2602701FFEB95D0069D1D5 /* DetailRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepoViewController.swift; sourceTree = "<group>"; };
 		5D3271521FFBEEC200D85242 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		5D3271541FFBFC8400D85242 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		5D3271561FFC19B900D85242 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		5D5C6A641FFF7D4600492B27 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		5D5C6A661FFF820200492B27 /* DetailRepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepoViewModel.swift; sourceTree = "<group>"; };
+		5D5C6A681FFF83AB00492B27 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		6AA2CF306840105893605F75 /* Pods-MVVM_GitHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHubTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHubTests/Pods-MVVM_GitHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70BCE722C93C18952F716B14 /* Pods-MVVM_GitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHub/Pods-MVVM_GitHub.release.xcconfig"; sourceTree = "<group>"; };
 		7998D121F801BBB13D293580 /* Pods-MVVM_GitHubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_GitHubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_GitHubTests/Pods-MVVM_GitHubTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +167,8 @@
 				5D23D6B11FFBE71F004D8296 /* AppDelegate.swift */,
 				5D3271541FFBFC8400D85242 /* MasterViewModel.swift */,
 				5D23D6B31FFBE71F004D8296 /* MasterViewController.swift */,
-				5D2602701FFEB95D0069D1D5 /* DetailViewController.swift */,
+				5D5C6A661FFF820200492B27 /* DetailRepoViewModel.swift */,
+				5D2602701FFEB95D0069D1D5 /* DetailRepoViewController.swift */,
 				5D23D6B51FFBE71F004D8296 /* Main.storyboard */,
 				5D23D6B81FFBE71F004D8296 /* Assets.xcassets */,
 				5D23D6BA1FFBE71F004D8296 /* LaunchScreen.storyboard */,
@@ -192,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				5D3271521FFBEEC200D85242 /* SearchModel.swift */,
+				5D5C6A641FFF7D4600492B27 /* CellModel.swift */,
+				5D5C6A681FFF83AB00492B27 /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,8 +404,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MVVM_GitHub/Pods-MVVM_GitHub-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxObjectMapper/RxObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -405,8 +416,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -512,10 +525,13 @@
 				5D3271571FFC19B900D85242 /* APIEndpoints.swift in Sources */,
 				5D3271531FFBEEC200D85242 /* SearchModel.swift in Sources */,
 				5D10CA071FFD73B700A7E92E /* GitHubTableViewCell.swift in Sources */,
+				5D5C6A651FFF7D4600492B27 /* CellModel.swift in Sources */,
+				5D5C6A671FFF820200492B27 /* DetailRepoViewModel.swift in Sources */,
 				5D23D6B41FFBE71F004D8296 /* MasterViewController.swift in Sources */,
+				5D5C6A691FFF83AB00492B27 /* DetailModel.swift in Sources */,
 				5D3271551FFBFC8400D85242 /* MasterViewModel.swift in Sources */,
 				5D23D6B21FFBE71F004D8296 /* AppDelegate.swift in Sources */,
-				5D2602711FFEB95D0069D1D5 /* DetailViewController.swift in Sources */,
+				5D2602711FFEB95D0069D1D5 /* DetailRepoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

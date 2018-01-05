@@ -10,6 +10,19 @@ import UIKit
 import RxCocoa
 import RxSwift
 import SwiftIcons
+import RxDataSources
+
+struct SectionOfCustomData {
+    var header: String
+    var items: [CellModel]
+}
+extension SectionOfCustomData: SectionModelType {
+    
+    init(original: SectionOfCustomData, items: [CellModel]) {
+        self = original
+        self.items = items
+    }
+}
 
 class MasterViewController: UIViewController, UITableViewDelegate {
     
@@ -44,27 +57,41 @@ class MasterViewController: UIViewController, UITableViewDelegate {
     }
     
     private func bindSourceData() {
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>()
+        dataSource.configureCell = { (_, tv, indexPath, element) in
+            let cell = tv.dequeueReusableCell(withIdentifier: "repoCell")! as! GitHubTableViewCell
+            cell.repoName.text = element.name
+            switch element.type {
+            case .repoCell?:
+                cell.iconImageView.setIcon(icon: .fontAwesome(.github))
+                break
+            case .userCell?:
+                cell.iconImageView.setIcon(icon: .fontAwesome(.user))
+                break
+            case .none:
+                break
+            }
+            return cell
+        }
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].header
+        }
         viewModel
             .trackResults()
-            .bind(to: tableView.rx.items) { tableView, row, item in
-                let cell: GitHubTableViewCell = tableView.dequeueReusableCell(withIdentifier: "repoCell", for: IndexPath(row: row, section: 0)) as! GitHubTableViewCell
-                cell.repoName?.text = item.name
-                cell.iconImageView.setIcon(icon: .fontAwesome(.github))
-                return cell
-            }
+            .bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
     }
     
     private func selectTableViewCell() {
         tableView
-            .rx.modelSelected(SimpleRepo.self)
+            .rx.modelSelected(CellModel.self)
             .subscribe(onNext:  { value in
                 if self.searchBar.isFirstResponder == true {
                     self.view.endEditing(true)
                 }
-                guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+                guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailRepoViewController") as? DetailRepoViewController
                     else { fatalError("DetailViewController not found") }
-//                detailVC.detailItem = value
+                detailVC.detailItemQuery = value.name
                 self.navigationController?.pushViewController(detailVC, animated: true)
             }, onError:{error in
                 print(error)

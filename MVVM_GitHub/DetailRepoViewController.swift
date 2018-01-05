@@ -9,7 +9,7 @@
 import UIKit
 import SwiftIcons
 
-class DetailViewController: UIViewController {
+class DetailRepoViewController: UIViewController {
     
     @IBOutlet weak var repositoryNameLabel: UILabel!
     @IBOutlet weak var repositoryOwnerLabel: UILabel!
@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var repositoryOwnerImageView: UIImageView!
     @IBOutlet weak var repositoryStarsImageView: UIImageView!
     
-    var detailItem: SimpleRepo?
+    var detailItemQuery: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,9 @@ class DetailViewController: UIViewController {
         repositoryNameImageView.setIcon(icon: .fontAwesome(.github))
         repositoryOwnerImageView.setIcon(icon: .fontAwesome(.user))
         repositoryStarsImageView.setIcon(icon: .fontAwesome(.star))
-        if let model = detailItem {
-            repositoryNameLabel.text = model.name
-            repositoryOwnerLabel.text = model.ownerName
+        if let model = detailItemQuery {
+//            repositoryNameLabel.text = model.name
+//            repositoryOwnerLabel.text = model.ownerName
         }
     }
     
