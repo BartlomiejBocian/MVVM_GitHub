@@ -94,12 +94,18 @@ class MasterViewController: UIViewController, UITableViewDelegate {
                     guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailRepoViewController") as? DetailRepoViewController
                         else { fatalError("DetailViewController not found") }
                     detailVC.detailItemQuery = value.name
+                    if let query = value.name {
+                        detailVC.viewModel = DetailViewModel(query: query)
+                    }
                     self.navigationController?.pushViewController(detailVC, animated: true)
                     break
                 case .userCell?:
                     guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailUserViewController") as? DetailUserViewController
                         else { fatalError("DetailViewController not found") }
                     detailVC.detailItemQuery = value.name
+                    if let query = value.name {
+                        detailVC.viewModel = DetailViewModel(queryUserName: query)
+                    }
                     self.navigationController?.pushViewController(detailVC, animated: true)
                     break
                 case .none:

@@ -22,7 +22,7 @@ class DetailUserViewController: UIViewController {
     
     var detailItemQuery: String?
     
-    let viewModel = DetailViewModel()
+    var viewModel: DetailViewModel!
     var disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,23 +33,8 @@ class DetailUserViewController: UIViewController {
     private func setUpUI() {
         userNameImageView.setIcon(icon: .fontAwesome(.user))
     
-        if let query = detailItemQuery {
-            viewModel.fetchUser(userName: query)
-                .subscribe(onNext: { [weak self] user in
-                    DispatchQueue.main.async{
-                        self?.userNameLabel.text = user.userName
-                        if let avatar = user.avatar{
-                            self?.avatarImageView.sd_setShowActivityIndicatorView(true)
-                            self?.avatarImageView.sd_setIndicatorStyle(.gray)
-                            self?.avatarImageView.sd_setImage(with: URL(string: avatar))
-                        }
-                        if let followersCount = user.followers {
-                            self?.userFollowersLabel.text = "\(followersCount)"
-                        }
-                    }
-                    }, onError: {error in print(error)})
-                .addDisposableTo(self.disposeBag)
-        }
+        viewModel.userName.asObservable().bind(to: self.userNameLabel.rx.text).addDisposableTo(self.disposeBag)
+         viewModel.userFollowersCount.asObservable().bind(to: self.userFollowersLabel.rx.text).addDisposableTo(self.disposeBag)
+        
     }
-
 }

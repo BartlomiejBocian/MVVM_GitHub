@@ -23,8 +23,9 @@ class DetailRepoViewController: UIViewController {
     
     var detailItemQuery: String?
     
-    let viewModel = DetailViewModel()
     var disposeBag = DisposeBag()
+    
+    var viewModel: DetailViewModel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,22 +33,16 @@ class DetailRepoViewController: UIViewController {
     }
     
     private func setUpUI() {
+        
         repositoryNameImageView.setIcon(icon: .fontAwesome(.github))
         repositoryOwnerImageView.setIcon(icon: .fontAwesome(.user))
         repositoryStarsImageView.setIcon(icon: .fontAwesome(.star))
         
         if let query = detailItemQuery {
-            viewModel.fetchRepository(fullName: query)
-                .subscribe(onNext: { [weak self] repo in
-                    DispatchQueue.main.async{
-                        self?.repositoryNameLabel.text = repo.name
-                        self?.repositoryOwnerLabel.text = repo.ownerName
-                        if let starCount = repo.stars {
-                            self?.repositoryStarsLabel.text = "\(starCount)"
-                        }
-                    }
-                }, onError: {error in print(error)})
-                .addDisposableTo(self.disposeBag)
+            
+            viewModel.repoName.asObservable().bind(to: self.repositoryNameLabel.rx.text).addDisposableTo(self.disposeBag)
+            viewModel.repoOwner.asObservable().bind(to: self.repositoryOwnerLabel.rx.text).addDisposableTo(self.disposeBag)
+            viewModel.repoStar.asObservable().bind(to: self.repositoryStarsLabel.rx.text).addDisposableTo(self.disposeBag)
         }
     }
     
